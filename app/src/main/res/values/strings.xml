@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">TP_2</string>
+    <string name="groupNumber">Grupo 1</string>
+    <string name="title">EjercicioControles</string>
     <string name="agregar_contactos">Agregar Contactos</string>
     <string name="listado_contactos">Listado de Contactos</string>
     <!-- Strings used for fragments for navigation -->
@@ -10,4 +12,13 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <string name="title_contact_form">FORMULARIO DE CONTACTO</string>
+    <string name="info_contact_form">Este es un formulario destinado al registro de personas, sus datos personales e intereses.</string>
+
+    <string name="info_contact_form_personal_data">A continuación, por favor se pide completar más datos personales.</string>
+
+    <!-- CONTACTOS -->
+    <string name="title_contacts">Contactos</string>
 </resources>

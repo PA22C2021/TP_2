@@ -15,9 +15,11 @@ public class AgregarContactos extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setTitle(R.string.title);
         binding = com.example.tp_2.databinding.ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setContentView(R.layout.activity_agregar_contactos);
+
     }
 }

@@ -17,9 +17,11 @@ public class ListadoContactos extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setTitle(R.string.title_contacts);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setContentView(R.layout.activity_listado_contactos);
+
     }
 }

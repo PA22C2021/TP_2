@@ -22,5 +22,8 @@ public class MainActivity extends BaseActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
+
+        String tituloCompuesto = R.string.title + " - " + R.string.groupNumber;
+        setTitle(tituloCompuesto);
     }
 }
