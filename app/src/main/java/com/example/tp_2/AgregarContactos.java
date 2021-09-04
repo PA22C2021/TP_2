@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class AgregarContactos extends BaseActivity {
 
@@ -18,8 +19,6 @@ public class AgregarContactos extends BaseActivity {
         setTitle(R.string.title);
         binding = com.example.tp_2.databinding.ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setContentView(R.layout.activity_agregar_contactos);
-
     }
 }
