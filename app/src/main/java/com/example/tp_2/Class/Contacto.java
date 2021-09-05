@@ -1,8 +1,12 @@
 package com.example.tp_2.Class;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 import java.util.Date;
 
+@Entity
 public class Contacto implements Serializable
 {
     public Contacto(String nombre, String apellido, Telefono telefono, String email, String direccion, Date fechaNacimiento, DatosAdicionales datosAdicionales)
@@ -16,6 +20,8 @@ public class Contacto implements Serializable
         this.DatosAdicionales = datosAdicionales;
     }
 
+    @PrimaryKey
+    private int Id;
     private String Nombre;
     private String Apellido;
     private Telefono Telefono;
