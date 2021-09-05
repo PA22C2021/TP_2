@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarContactos2">
+
+    <ScrollView
+        android:id="@+id/svPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:id="@+id/linearGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_contact_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="@string/title_contact_form"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/info_contact_form"
+                android:layout_width="382dp"
+                android:layout_height="70dp"
+                android:paddingTop="10dp"
+                android:text="@string/info_contact_form_personal_data" />
+
+            <TextView
+                android:id="@+id/tvNivelEstudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/tv_nivelestudio" />
+
+            <RadioGroup
+                android:id="@+id/rgEstudios"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rbPrimarioIncompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_primariaincompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbPrimarioCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_primariacompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbSecundarioInCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_secundarioincompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbSecundarioCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_secundariocompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbOtros"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_otros" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/linearIntereses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/tv_intereses" />
+
+            <LinearLayout
+                android:id="@+id/linearCheckBox1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbDeporte"
+                    android:layout_width="126dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbdeporte" />
+
+                <CheckBox
+                    android:id="@+id/cbMusica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbmusica" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearCheckBox2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbArte"
+                    android:layout_width="126dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbarte" />
+
+                <CheckBox
+                    android:id="@+id/cbTecnologia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cbtecnologia" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearRecibirInformacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/tvInformacion"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_recibeinformacion" />
+
+                <Switch
+                    android:id="@+id/swtichInfoSi"
+                    android:layout_width="47dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/switchsi" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="GuardarClick"
+                android:text="@string/btn_guardar" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

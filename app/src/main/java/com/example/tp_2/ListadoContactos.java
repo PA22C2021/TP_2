@@ -1,15 +1,19 @@
 package com.example.tp_2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Switch;
+import android.widget.TextView;
 
+import com.example.tp_2.Class.Contacto;
 import com.example.tp_2.databinding.ActivityMainBinding;
 
 public class ListadoContactos extends BaseActivity {
+
+    Contacto contacto;
 
     private ActivityMainBinding binding;
 
@@ -23,5 +27,7 @@ public class ListadoContactos extends BaseActivity {
 
         setContentView(R.layout.activity_listado_contactos);
 
+        Intent intent = getIntent();
+        contacto = (Contacto) intent.getSerializableExtra("contactocompleto");
     }
 }
