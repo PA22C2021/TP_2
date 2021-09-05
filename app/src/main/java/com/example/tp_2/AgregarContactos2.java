@@ -9,12 +9,13 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.Switch;
 
+import com.example.tp_2.Class.Almacenamiento;
 import com.example.tp_2.Class.Contacto;
 import com.example.tp_2.Class.DatosAdicionales;
 import com.example.tp_2.Enum.NivelEstudio;
 import com.example.tp_2.databinding.ActivityMainBinding;
 
-public class AgregarContactos2 extends AppCompatActivity {
+public class AgregarContactos2 extends BaseActivity {
 
     private ActivityMainBinding binding;
 
@@ -53,6 +54,10 @@ public class AgregarContactos2 extends AppCompatActivity {
 
     public void GuardarClick(View view)
     {
+        // TODO: Faltan validaciones de los controles.
+
+
+        // Si no hay ningun problema seteamos.
         DatosAdicionales datosAdicionales = new DatosAdicionales();
 
         // Seteo nivel de estudio
@@ -106,9 +111,11 @@ public class AgregarContactos2 extends AppCompatActivity {
         }
 
         contacto.setDatosAdicionales(datosAdicionales);
-        
+
+        Almacenamiento almacenamiento = new Almacenamiento();
+        almacenamiento.Guardar(contacto);
+
         Intent intent = new Intent(view.getContext(), ListadoContactos.class);
-        intent.putExtra("contactocompleto", contacto);
         startActivity(intent);
         this.finish();
     }

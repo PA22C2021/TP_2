@@ -13,12 +13,6 @@
             android:name=".AgregarContactos2"
             android:exported="true" />
         <activity
-            android:name=".activity_mas_datos_contacto"
-            android:exported="true" />
-        <activity
-            android:name=".BaseActivity"
-            android:exported="true" />
-        <activity
             android:name=".ListadoContactos"
             android:exported="true" />
         <activity
