@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 
 import com.example.tp_2.Class.Almacenamiento;
@@ -21,6 +22,7 @@ public class AgregarContactos2 extends BaseActivity {
 
     Contacto contacto;
 
+    RadioGroup rgEstudios;
     RadioButton rbPrimarioIncompleto, rbPrimarioCompleto, rbSecundarioIncompleto, rbSecundarioCompleto, rbOtros;
     CheckBox cbDeporte, cbMusica, cbArte, cbTecnologia;
     Switch switchRecibirInfo;
@@ -38,6 +40,7 @@ public class AgregarContactos2 extends BaseActivity {
         Intent intent = getIntent();
         contacto = (Contacto) intent.getSerializableExtra("contacto");
 
+        rgEstudios = (RadioGroup) findViewById(R.id.rgEstudios);
         rbPrimarioIncompleto = (RadioButton) findViewById(R.id.rbPrimarioIncompleto);
         rbPrimarioCompleto = (RadioButton) findViewById(R.id.rbPrimarioCompleto);
         rbSecundarioIncompleto = (RadioButton) findViewById(R.id.rbSecundarioInCompleto);
@@ -54,8 +57,7 @@ public class AgregarContactos2 extends BaseActivity {
 
     public void GuardarClick(View view)
     {
-        // TODO: Faltan validaciones de los controles.
-
+        if(!formularioEsValido()) return;
 
         // Si no hay ningun problema seteamos.
         DatosAdicionales datosAdicionales = new DatosAdicionales();
@@ -118,5 +120,18 @@ public class AgregarContactos2 extends BaseActivity {
         Intent intent = new Intent(view.getContext(), ListadoContactos.class);
         startActivity(intent);
         this.finish();
+    }
+
+    private boolean formularioEsValido() {
+        return estudiosEsValido();
+    }
+
+    private boolean estudiosEsValido() {
+        if(rgEstudios.getCheckedRadioButtonId() == -1) {
+            rgEstudios.requestFocus();
+            rbOtros.setError("");
+            return false;
+        }
+        return true;
     }
 }
