@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Contacto implements Serializable
 {
-    public Contacto(String nombre, String apellido, Telefono telefono, String email, String direccion, Date fechaNacimiento, DatosAdicionales datosAdicionales)
+    public Contacto(String nombre, String apellido, Telefono telefono, String email, String direccion, String fechaNacimiento, DatosAdicionales datosAdicionales)
     {
         this.Nombre = nombre;
         this.Apellido = apellido;
@@ -21,7 +21,7 @@ public class Contacto implements Serializable
     private Telefono Telefono;
     private String Email;
     private String Direccion;
-    private Date FechaNacimiento;
+    private String FechaNacimiento;
 
 
     private DatosAdicionales DatosAdicionales;
@@ -58,11 +58,11 @@ public class Contacto implements Serializable
         Direccion = direccion;
     }
 
-    public Date getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return FechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         FechaNacimiento = fechaNacimiento;
     }
 
@@ -80,5 +80,11 @@ public class Contacto implements Serializable
 
     public void setDatosAdicionales(DatosAdicionales datosAdicionales) {
         DatosAdicionales = datosAdicionales;
+    }
+
+    @Override
+    public String toString()
+    {
+        return this.Nombre + " " + this.Apellido + " - " + this.Email;
     }
 }

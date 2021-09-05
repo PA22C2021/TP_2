@@ -49,7 +49,7 @@ public class AgregarContactos extends BaseActivity {
         // Cargo el contacto.
         Contacto nuevoContacto = new Contacto(etNombre.getText().toString(), etApellido.getText().toString(),
                 new Telefono(etTelefono.getText().toString(), (TipoTelefono) spTipoTelefono.getSelectedItem()),
-                etEmail.getText().toString(), etDireccion.getText().toString(), null, null);
+                etEmail.getText().toString(), etDireccion.getText().toString(), etFechaNacimiento.getText().toString(), null);
 
         Intent intent = new Intent(view.getContext(), AgregarContactos2.class);
         intent.putExtra("contacto", nuevoContacto);

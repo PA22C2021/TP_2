@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
+                android:paddingBottom="20dp"
                 android:text="@string/title_contact_form"
                 android:textSize="24sp" />
 

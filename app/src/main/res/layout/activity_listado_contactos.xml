@@ -6,13 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ListadoContactos">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="138dp"
-        android:layout_height="94dp"
-        android:text="Listar Contactos"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="318dp" />
-
+    <ListView
+        android:id="@+id/lvContacto"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
