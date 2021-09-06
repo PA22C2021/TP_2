@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_nombre" />
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvApellido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_apellido" />
+
+            <EditText
+                android:id="@+id/etApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <TextView
+                android:id="@+id/tvTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_telefono" />
+
+            <LinearLayout
+                android:id="@+id/llTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etTelefono"
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone" />
+
+                <Spinner
+                    android:id="@+id/spTipoTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_email" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/tvFechaNacimiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_fecha_nacimiento" />
+
+            <EditText
+                android:id="@+id/etFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="DD/MM/YYYY"
+                android:inputType="date" />
+
+            <TextView
+                android:id="@+id/tvDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_direccion" />
+
+            <EditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/tvNivelEstudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/tv_nivelestudio" />
+
+            <RadioGroup
+                android:id="@+id/rgEstudios"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rbPrimarioIncompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_primariaincompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbPrimarioCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_primariacompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbSecundarioInCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_secundarioincompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbSecundarioCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_secundariocompleto" />
+
+                <RadioButton
+                    android:id="@+id/rbOtros"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb_otros" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/linearIntereses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/tv_intereses" />
+
+            <LinearLayout
+                android:id="@+id/linearCheckBox1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbDeporte"
+                    android:layout_width="126dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbdeporte" />
+
+                <CheckBox
+                    android:id="@+id/cbMusica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbmusica" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearCheckBox2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbArte"
+                    android:layout_width="126dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cbarte" />
+
+                <CheckBox
+                    android:id="@+id/cbTecnologia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cbtecnologia" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearRecibirInformacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/tvInformacion"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_recibeinformacion" />
+
+                <Switch
+                    android:id="@+id/swtichInfoSi"
+                    android:layout_width="47dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/switchsi" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="VolverClick"
+                android:text="VOLVER" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
