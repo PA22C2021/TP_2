@@ -22,4 +22,13 @@ public class Telefono implements Serializable
     public void setNumero(String numero) {
         Numero = numero;
     }
+
+    public String toCSV(){
+        return Numero + ";" +
+        TipoTelefono;
+    }
+
+    public String getHeaderCSV(){
+        return "Numero;TipoTelefono";
+    }
 }

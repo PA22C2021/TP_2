@@ -78,4 +78,17 @@ public class DatosAdicionales implements Serializable {
     public void setRecibirInformacion(boolean recibirInformacion) {
         RecibirInformacion = recibirInformacion;
     }
+
+    public String toCSV(){
+        return NivelEstudio + ";" +
+        InteresDeporte + ";" +
+        InteresMusica + ";" +
+        InteresArte + ";" +
+        InteresTecnología + ";" +
+        RecibirInformacion;
+    }
+
+    public String getHeaderCSV(){
+        return "NivelEstudio;InteresDeporte;InteresMusica;InteresArte;InteresTecnología;RecibirInformacion";
+    }
 }

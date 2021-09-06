@@ -2,6 +2,7 @@ package com.example.tp_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,12 +10,18 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.tp_2.Class.Almacenamiento;
 import com.example.tp_2.Class.Contacto;
 import com.example.tp_2.Class.DatosAdicionales;
 import com.example.tp_2.Enum.NivelEstudio;
 import com.example.tp_2.databinding.ActivityMainBinding;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class AgregarContactos2 extends BaseActivity {
 
@@ -26,6 +33,7 @@ public class AgregarContactos2 extends BaseActivity {
     RadioButton rbPrimarioIncompleto, rbPrimarioCompleto, rbSecundarioIncompleto, rbSecundarioCompleto, rbOtros;
     CheckBox cbDeporte, cbMusica, cbArte, cbTecnologia;
     Switch switchRecibirInfo;
+    private final static String FileName = "contactos.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +123,27 @@ public class AgregarContactos2 extends BaseActivity {
         contacto.setDatosAdicionales(datosAdicionales);
 
         Almacenamiento almacenamiento = new Almacenamiento();
-        almacenamiento.Guardar(contacto);
+        String archivos [] = fileList();
+        /*if(!almacenamiento.ArchivoExiste(archivos, FileName)){
+            try {
+                OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(FileName, Activity.MODE_PRIVATE));
+                archivo.write(contacto.getHeaderCSV());
+                archivo.flush();
+                archivo.close();
+            }catch (IOException e){
+
+            }
+        }*/
+
+        try {
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(FileName, Activity.MODE_PRIVATE));
+            archivo.write(contacto.toCSV());
+            archivo.flush();
+            archivo.close();
+            Toast.makeText(this, "contacto guardado correctamente", Toast.LENGTH_SHORT).show();
+        }catch (IOException e){
+            Toast.makeText(this, "contacto no se pudo guardar correctamente", Toast.LENGTH_SHORT).show();
+        }
 
         Intent intent = new Intent(view.getContext(), ListadoContactos.class);
         startActivity(intent);
