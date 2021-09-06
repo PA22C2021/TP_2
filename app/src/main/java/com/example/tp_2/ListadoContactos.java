@@ -2,6 +2,7 @@ package com.example.tp_2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import com.example.tp_2.Class.Almacenamiento;
 import com.example.tp_2.Class.Contacto;
+import com.example.tp_2.Class.Telefono;
+import com.example.tp_2.Enum.TipoTelefono;
 import com.example.tp_2.databinding.ActivityMainBinding;
 
 import java.io.BufferedReader;
@@ -68,5 +71,14 @@ public class ListadoContactos extends BaseActivity {
         // Recibe una lista de contactos y la setea en el listview.
         ArrayAdapter<Contacto> arrayAdapter = new ArrayAdapter<Contacto>(this, android.R.layout.simple_list_item_1, contactoList);
         lvContactos.setAdapter(arrayAdapter);
+    }
+
+    public void DetalleClick(View view)
+    {
+        Intent intent = new Intent(view.getContext(), DetalleContacto.class);
+        intent.putExtra("contacto", new Contacto());
+        startActivity(intent);
+        this.finish();
+
     }
 }
