@@ -124,25 +124,26 @@ public class AgregarContactos2 extends BaseActivity {
 
         Almacenamiento almacenamiento = new Almacenamiento();
         String archivos [] = fileList();
-        /*if(!almacenamiento.ArchivoExiste(archivos, FileName)){
+        if(!almacenamiento.ArchivoExiste(archivos, FileName)){
             try {
                 OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(FileName, Activity.MODE_PRIVATE));
-                archivo.write(contacto.getHeaderCSV());
+                archivo.write(contacto.toCSV());
                 archivo.flush();
                 archivo.close();
             }catch (IOException e){
 
             }
-        }*/
-
-        try {
-            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(FileName, Activity.MODE_PRIVATE));
-            archivo.write(contacto.toCSV());
-            archivo.flush();
-            archivo.close();
-            Toast.makeText(this, "contacto guardado correctamente", Toast.LENGTH_SHORT).show();
-        }catch (IOException e){
-            Toast.makeText(this, "contacto no se pudo guardar correctamente", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            try {
+                OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(FileName, Activity.MODE_APPEND));
+                archivo.append(contacto.toCSV());
+                archivo.flush();
+                archivo.close();
+                Toast.makeText(this, "contacto guardado correctamente", Toast.LENGTH_SHORT).show();
+            }catch (IOException e){
+                Toast.makeText(this, "contacto no se pudo guardar correctamente", Toast.LENGTH_SHORT).show();
+            }
         }
 
         Intent intent = new Intent(view.getContext(), ListadoContactos.class);
